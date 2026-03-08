@@ -21,7 +21,7 @@ This Python script simulates **mass-flow runout** from a digital elevation model
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| DEM | Raster Dataset | Digital Elevation Model. If geographic CRS (degrees) or non-meter units, automatically reprojected to UTM. |
+| DEM | Raster Dataset | Digital Elevation Model. |
 | AOI | Feature Layer | AOI polygons. |
 | Output Folder | Folder | Directory to save output rasters and temporary files. |
 | Tanα | String (optional) | Minimum runout slope threshold (default = `0.05`). Pixels with `pgse < Tanα` are masked out. |
