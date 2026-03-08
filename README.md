@@ -6,24 +6,15 @@
 **Last updated:** 08.03.2026  
 **Language:** English  
 **Coding language:** Python  
-**Operating System:** Windows (ArcGIS 10.0 or later, including ArcGIS Pro)  
+**Operating System:** Windows (ArcGIS Pro)  
 **Installation Time:** ~1 second  
 
 ---
 ## Overview
 
+This is a Python version of **Modified Single Flow direction (MSF) model** developed by [Christian Huggel](https://nhess.copernicus.org/articles/3/647/2003/nhess-3-647-2003.html) et al. in 2003.
+
 This Python script simulates **mass-flow runout** from a digital elevation model (DEM) and a set of areas of interest (AOI) polygons using flow-direction-weighted path distance analysis. The approach can be applied to model a range of gravity-driven hazards, including **glacial lake outburst floods (GLOFs)**, **debris flows**, and **landslides**.
-
-For each input AOI, the script:
-
-1. Preprocesses the DEM: fills sinks, computes **flow direction**, converts flow direction to **angular degrees** (`fldir_deg`).
-2. Converts each AOI polygon to a raster (`active_aoi`).
-3. Runs **Cost Allocation** to assign each downstream pixel the elevation of its source AOI.
-4. Runs **Path Distance** (with `fldir_deg` as the horizontal factor, Forward mode) to compute the hydrological path length from the AOI outward.
-5. Computes **elevation difference** (`z_diffse = costalloc_dem − DEM`) between the AOI surface and each downstream pixel.
-6. Computes the **runout slope** (`pgse = z_diffse / h_diffse`).
-7. Filters pixels by the slope threshold **Tan α**, retaining only areas where `pgse ≥ Tanα`.
-8. Saves one output raster per AOI.
 
 ---
 ## Inputs
@@ -48,12 +39,12 @@ For each input AOI, the script:
 ---
 ## Workflow
 
-1. Prepare a DEM and a AOI polygon layer covering the study area.
+1. Prepare a DEM and an AOI polygon layer covering the study area.
 2. Set the output folder and optionally adjust the **Tanα** threshold.
 3. Run the tool:
-   - **PART 0** — Projection check: if DEM or lakes are in geographic CRS or non-meter units, they are automatically reprojected to the appropriate UTM zone.
+   - **PART 0** — Projection check: if DEM or AOI are in geographic CRS or non-meter units, they are automatically reprojected to the appropriate UTM zone.
    - **PART 1** — DEM preprocessing: `Int → Fill → Int → FlowDirection → Log2 → fldir_deg`.
-   - **PART 2** — Per-lake iteration: `Feature to Raster → Cost Allocation → Path Distance → Extract by Mask → z_diffse → pgse → filter by Tanα → save`.
+   - **PART 2** — Per-AOI iteration: `Feature to Raster → Cost Allocation → Path Distance → Extract by Mask → z_diffse → pgse → filter by Tanα → save`.
 4. Collect output rasters (`path_<ID>.tif`) from the output folder.
 
 > **Note:** Requires the **Spatial Analyst** extension in ArcGIS Pro.  
