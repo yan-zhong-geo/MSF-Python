@@ -47,8 +47,7 @@ This Python script simulates **mass-flow runout** from a digital elevation model
    - **PART 2** — Per-AOI iteration: `Feature to Raster → Cost Allocation → Path Distance → Extract by Mask → z_diffse → pgse → filter by Tanα → save`.
 4. Collect output rasters (`path_<ID>.tif`) from the output folder.
 
-> **Note:** Requires the **Spatial Analyst** extension in ArcGIS Pro.  
-> **Note:** If Tanα is left blank, a default value of `0.05` is used.
+> **Note:** Requires the **Spatial Analyst** extension in ArcGIS Pro.
 
 ---
 
