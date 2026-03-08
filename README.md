@@ -19,12 +19,12 @@ This Python script simulates **mass-flow runout** from a digital elevation model
 ---
 ## Inputs
 
-| Parameter | Type | Required | Description |
-|-----------|------|----------|-------------|
-| DEM | Raster Dataset | Yes | Digital Elevation Model. If geographic CRS (degrees) or non-meter units, automatically reprojected to UTM. |
-| AOI | Feature Layer | Yes | AOI polygons. |
-| Output Folder | Folder | Yes | Directory to save output rasters and temporary files. |
-| Tanα | String | No | Minimum runout slope threshold (default = `0.05`). Pixels with `pgse < Tanα` are masked out. |
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| DEM | Raster | Digital Elevation Model. If geographic CRS (degrees) or non-meter units, automatically reprojected to UTM. |
+| AOI | Polygon Feature Class | AOI polygons. |
+| Output Folder | Folder | Directory to save output rasters and temporary files. |
+| Tanα | Float (optional) | Minimum runout slope threshold (default = `0.05`). Pixels with `pgse < Tanα` are masked out. |
 
 > **Note:** The model is tolerant of input data formats: DEMs can be provided either projected or unprojected, and AOI polygon sets can be used directly without specifying unique IDs.
 
