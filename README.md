@@ -1,4 +1,4 @@
-# Modified Single Flow direction (MSF) Tool (Python)
+# MSF Tool (Python)
 
 **Developer:** [Yan Zhong](https://sites.google.com/view/yanzhong-geo), [University of Geneva](https://c-cia.ch/)  
 **E-mails:** yan.zhong@unige.ch | yan.zhong.geo@gmail.com  
