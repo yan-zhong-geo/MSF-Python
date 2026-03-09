@@ -28,6 +28,8 @@ This Python script simulates **mass-flow runout** from a digital elevation model
 
 > **Note:** The model is tolerant of input data formats: DEMs can be provided either projected or unprojected, and AOI polygon sets can be used directly without specifying unique IDs.
 
+> **Note:** Demo data are provided in the tools package for model demonstration purposes.  
+> **Expected run time:** ~3 minutes on a standard desktop computer.
 ---
 ## Outputs
 
