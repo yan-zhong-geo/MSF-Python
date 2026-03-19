@@ -119,8 +119,8 @@ Delineates catchment boundaries from a DEM and a set of pour points, outputting 
 
 ## General Notes
 
-> **Requires the Spatial Analyst extension** in ArcGIS Pro for all three tools.  
-> All tools share the same automatic UTM reprojection logic — inputs in geographic CRS or non-meter projected CRS are handled transparently.
+**Requires the Spatial Analyst extension** in ArcGIS Pro for all three tools.  
+All tools share the same automatic UTM reprojection logic — inputs in geographic CRS or non-meter projected CRS are handled transparently.
 
 ---
 
